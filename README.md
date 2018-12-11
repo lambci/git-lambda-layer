@@ -65,5 +65,5 @@ exports.handler = async(event) => {
 
 | Git version | openssh version | ARN |
 | --- | --- | --- |
-| 2.20.0 | OpenSSH_6.6.1p1, OpenSSL 1.0.1k-fips | arn:aws:lambda:us-east-1:553035198032:layer:git:3 |
-| 2.19.2 | OpenSSH_6.6.1p1, OpenSSL 1.0.1k-fips | arn:aws:lambda:us-east-1:553035198032:layer:git:2 |
+| 2.20.0 | OpenSSH_6.6.1p1, OpenSSL 1.0.1k-fips | arn:aws:lambda:<region>:553035198032:layer:git:3 |
+| 2.19.2 | OpenSSH_6.6.1p1, OpenSSL 1.0.1k-fips | arn:aws:lambda:<region>:553035198032:layer:git:2 |
