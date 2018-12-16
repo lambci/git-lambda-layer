@@ -21,7 +21,7 @@ Then click Add, save your lambda and test it out!
 
 ![Referenced layers](https://raw.githubusercontent.com/lambci/git-lambda-layer/master/img/referenced.png "Referenced layer ARN screenshot")
 
-# Simple example on Node.js w/ https
+## Simple example on Node.js w/ https
 
 ```js
 const { execSync } = require('child_process')
@@ -35,7 +35,7 @@ exports.handler = async(event) => {
 }
 ```
 
-# Complex example on Node.js w/ ssh
+## Complex example on Node.js w/ ssh
 
 ```js
 const fs = require('fs')
@@ -60,6 +60,11 @@ exports.handler = async(event) => {
   return execSync('ls /tmp/aws4', { encoding: 'utf8' }).split('\n')
 }
 ```
+`ssh` always tries to create a `.ssh` directory – this is something you can't avoid, nor can you specify your own destination for this – which means you'll see a warning similar to the following:
+```
+Could not create directory '/home/sbx_user1075/.ssh'.
+```
+You can ignore this warning – `ssh` should continue to execute past this point, assuming you have the `UserKnownHostsFile` option correct and it contains the signature of the host you're trying to connect to. Alternatively, you can use `-o StrictHostKeyChecking=no` if you're not concerned about MiTM attacks.
 
 ## Version ARNs
 
