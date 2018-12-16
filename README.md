@@ -12,7 +12,7 @@ Click on Layers and choose "Add a layer", and "Provide a layer version
 ARN" and enter the following ARN:
 
 ```
-arn:aws:lambda:us-east-1:553035198032:layer:git:2
+arn:aws:lambda:us-east-1:553035198032:layer:git:3
 ```
 
 ![Provide layer ARN](https://raw.githubusercontent.com/lambci/git-lambda-layer/master/img/provide.png "Provide layer ARN screenshot")
