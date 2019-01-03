@@ -9,7 +9,7 @@ You can add this layer to any Lambda function you want – no matter what runtim
 you're using. `PATH` already includes `/opt/bin` in Lambda, which is where it will be mounted.
 
 Click on Layers and choose "Add a layer", and "Provide a layer version
-ARN" and enter the following ARN:
+ARN" and enter the following ARN (replace `us-east-1` with the region of your Lambda):
 
 ```
 arn:aws:lambda:us-east-1:553035198032:layer:git:3
