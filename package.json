@@ -1,0 +1,23 @@
+{
+  "name": "git-lambda-layer",
+  "version": "0.0.0",
+  "description": "A layer for AWS Lambda that allows your functions to use `git` and `ssh` binaries",
+  "main": "index.js",
+  "scripts": {
+    "test": "./test.sh"
+  },
+  "repository": "lambci/git-lambda-layer",
+  "bugs": {
+    "url": "https://github.com/lambci/git-lambda-layer/issues"
+  },
+  "homepage": "https://github.com/lambci/git-lambda-layer#readme",
+  "keywords": [
+    "lambda",
+    "layer",
+    "git",
+    "ssh",
+    "binary"
+  ],
+  "author": "Michael Hart <michael@soothbooth.com>",
+  "license": "MIT"
+}
