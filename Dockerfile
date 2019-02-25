@@ -1,8 +1,7 @@
 FROM lambci/lambda-base
 
 RUN find /usr ! -type d | sort > fs.txt && \
-  yum list openssh-clients && \
-  yum install -y openssh-clients && \
+  yum reinstall -y openssl openssh-clients && \
   bash -c 'comm -13 fs.txt <(find /usr ! -type d | sort)' | \
   grep -v ^/usr/share | \
   tar -c -T - | \
@@ -14,7 +13,7 @@ FROM lambci/lambda-base:build
 
 COPY --from=0 /opt /opt
 
-RUN yum install -y yum-utils rpm-build && \
+RUN yum install -y --releasever=latest yum-utils rpm-build && \
   yumdownloader --source openssh && \
   yum-builddep -y openssh && \
   rpm -ivh *.rpm

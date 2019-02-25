@@ -12,7 +12,7 @@ Click on Layers and choose "Add a layer", and "Provide a layer version
 ARN" and enter the following ARN (replace `us-east-1` with the region of your Lambda):
 
 ```
-arn:aws:lambda:us-east-1:553035198032:layer:git:3
+arn:aws:lambda:us-east-1:553035198032:layer:git:4
 ```
 
 ![Provide layer ARN](https://raw.githubusercontent.com/lambci/git-lambda-layer/master/img/provide.png "Provide layer ARN screenshot")
@@ -70,5 +70,6 @@ You can ignore this warning – `ssh` should continue to execute past this poin
 
 | Git version | openssh version | ARN |
 | --- | --- | --- |
+| 2.21.0 | OpenSSH_6.6.1p1, OpenSSL 1.0.1k-fips | `arn:aws:lambda:<region>:553035198032:layer:git:4` |
 | 2.20.0 | OpenSSH_6.6.1p1, OpenSSL 1.0.1k-fips | `arn:aws:lambda:<region>:553035198032:layer:git:3` |
 | 2.19.2 | OpenSSH_6.6.1p1, OpenSSL 1.0.1k-fips | `arn:aws:lambda:<region>:553035198032:layer:git:2` |

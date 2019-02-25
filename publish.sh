@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GIT_VERSION=2.20.0
+GIT_VERSION=2.21.0
 
 REGIONS='
 ap-northeast-1
@@ -24,9 +24,5 @@ for region in $REGIONS; do
   aws lambda add-layer-version-permission --region $region --layer-name git \
     --statement-id sid1 --action lambda:GetLayerVersion --principal '*' \
     --version-number $(aws lambda publish-layer-version --region $region --layer-name git --zip-file fileb://layer.zip \
-      --description "Git ${GIT_VERSION} and openssh binaries" --query Version --output text) &
-done
-
-for job in $(jobs -p); do
-  wait $job
+      --description "Git ${GIT_VERSION} and openssh binaries" --query Version --output text)
 done
