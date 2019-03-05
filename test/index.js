@@ -5,5 +5,9 @@ exports.handler = async(event) => {
 
   execSync('cd /tmp && git clone https://github.com/mhart/aws4', { encoding: 'utf8', stdio: 'inherit' })
 
-  return execSync('ls /tmp/aws4', { encoding: 'utf8' }).split('\n')
+  execSync('ls -l /tmp/aws4', { encoding: 'utf8', stdio: 'inherit' })
+
+  execSync('ldd /opt/bin/git', { encoding: 'utf8', stdio: 'inherit' })
+
+  execSync('ldd /opt/bin/ssh', { encoding: 'utf8', stdio: 'inherit' })
 }
