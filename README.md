@@ -6,7 +6,7 @@ for AWS Lambda that allows your functions to use `git` and `ssh` binaries.
 ## Getting Started
 
 You can add this layer to any Lambda function you want – no matter what runtime
-you're using. `PATH` already includes `/opt/bin` in Lambda, which is where it will be mounted.
+you're using (EDIT 2019-05-16: as the new `nodejs10.x` runtime uses a completely different OS, this layer is not yet compatible with that runtime. Follow https://github.com/lambci/git-lambda-layer/issues/13 for updates). `PATH` already includes `/opt/bin` in Lambda, which is where it will be mounted.
 
 Click on Layers and choose "Add a layer", and "Provide a layer version
 ARN" and enter the following ARN (replace `us-east-1` with the region of your Lambda):
