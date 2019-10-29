@@ -10,4 +10,6 @@ exports.handler = async(event) => {
   execSync('ldd /opt/bin/git', { encoding: 'utf8', stdio: 'inherit' })
 
   execSync('ldd /opt/bin/ssh', { encoding: 'utf8', stdio: 'inherit' })
+
+  execSync('ssh -V', { encoding: 'utf8', stdio: 'inherit' })
 }
