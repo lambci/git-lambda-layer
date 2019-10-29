@@ -5,14 +5,20 @@ for AWS Lambda that allows your functions to use `git` and `ssh` binaries.
 
 ## Getting Started
 
-You can add this layer to any Lambda function you want – no matter what runtime
-you're using (EDIT 2019-05-16: as the new `nodejs10.x` runtime uses a completely different OS, this layer is not yet compatible with that runtime. Follow https://github.com/lambci/git-lambda-layer/issues/13 for updates). `PATH` already includes `/opt/bin` in Lambda, which is where it will be mounted.
+You can add this layer to any Lambda function you want.
+`PATH` already includes `/opt/bin` in Lambda, which is where it will be mounted.
 
 Click on Layers and choose "Add a layer", and "Provide a layer version
 ARN" and enter the following ARN (replace `us-east-1` with the region of your Lambda):
 
 ```
-arn:aws:lambda:us-east-1:553035198032:layer:git:6
+arn:aws:lambda:us-east-1:553035198032:layer:git:7
+```
+
+*Note:* If you're using the `nodejs10.x` runtime, then you'll need to use a slightly different layer:
+
+```
+arn:aws:lambda:us-east-1:553035198032:layer:git-lambda2:7
 ```
 
 ![Provide layer ARN](https://raw.githubusercontent.com/lambci/git-lambda-layer/master/img/provide.png "Provide layer ARN screenshot")
@@ -66,7 +72,13 @@ Could not create directory '/home/sbx_user1075/.ssh'.
 ```
 You can ignore this warning – `ssh` should continue to execute past this point, assuming you have the `UserKnownHostsFile` option correct and it contains the signature of the host you're trying to connect to. Alternatively, you can use `-o StrictHostKeyChecking=no` if you're not concerned about MiTM attacks.
 
-## Version ARNs
+## Version ARNs for Amazon Linux 2 runtimes (`nodejs10.x`)
+
+| Git version | openssh version | ARN |
+| --- | --- | --- |
+| 2.23.0 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git-lambda2:1` |
+
+## Version ARNs for all other runtimes
 
 | Git version | openssh version | ARN |
 | --- | --- | --- |
