@@ -18,8 +18,10 @@ arn:aws:lambda:us-east-1:553035198032:layer:git:7
 *Note:* If you're using the `nodejs10.x` runtime, then you'll need to use a slightly different layer:
 
 ```
-arn:aws:lambda:us-east-1:553035198032:layer:git-lambda2:7
+arn:aws:lambda:us-east-1:553035198032:layer:git-lambda2:1
 ```
+
+(again, replacing `us-east-1` with the region of your Lambda)
 
 ![Provide layer ARN](https://raw.githubusercontent.com/lambci/git-lambda-layer/master/img/provide.png "Provide layer ARN screenshot")
 
