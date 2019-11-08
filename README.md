@@ -12,7 +12,7 @@ Click on Layers and choose "Add a layer", and "Provide a layer version
 ARN" and enter the following ARN (replace `us-east-1` with the region of your Lambda):
 
 ```
-arn:aws:lambda:us-east-1:553035198032:layer:git:7
+arn:aws:lambda:us-east-1:553035198032:layer:git:8
 ```
 
 *Note:* If you're using the `nodejs10.x` runtime, then you'll need to use a slightly different layer:
@@ -84,6 +84,7 @@ You can ignore this warning – `ssh` should continue to execute past this poin
 
 | Git version | openssh version | ARN |
 | --- | --- | --- |
+| 2.24.0 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git:8` |
 | 2.23.0 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git:7` |
 | 2.21.0 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git:6` |
 | 2.20.0 | OpenSSH_6.6.1p1, OpenSSL 1.0.1k-fips | `arn:aws:lambda:<region>:553035198032:layer:git:3` |

@@ -1,6 +1,11 @@
 #!/bin/sh
 
-export GIT_VERSION=2.23.0
+export GIT_VERSION=2.24.0
 
-docker build --build-arg GIT_VERSION -t git-lambda-layer .
-docker run --rm git-lambda-layer cat /tmp/git-${GIT_VERSION}.zip > ./layer.zip
+rm layer.zip
+
+docker run --rm -v "$PWD":/tmp/layer lambci/yumda:1 bash -c "
+  yum install -y git-${GIT_VERSION} && \
+  cd /lambda/opt && \
+  zip -yr /tmp/layer/layer.zip .
+"
