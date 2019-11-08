@@ -18,7 +18,7 @@ arn:aws:lambda:us-east-1:553035198032:layer:git:8
 *Note:* If you're using the `nodejs10.x` runtime, then you'll need to use a slightly different layer:
 
 ```
-arn:aws:lambda:us-east-1:553035198032:layer:git-lambda2:1
+arn:aws:lambda:us-east-1:553035198032:layer:git-lambda2:2
 ```
 
 (again, replacing `us-east-1` with the region of your Lambda)
@@ -78,6 +78,7 @@ You can ignore this warning – `ssh` should continue to execute past this poin
 
 | Git version | openssh version | ARN |
 | --- | --- | --- |
+| 2.24.0 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git-lambda2:2` |
 | 2.23.0 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git-lambda2:1` |
 
 ## Version ARNs for all other runtimes
