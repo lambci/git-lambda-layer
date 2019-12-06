@@ -15,7 +15,7 @@ ARN" and enter the following ARN (replace `us-east-1` with the region of your La
 arn:aws:lambda:us-east-1:553035198032:layer:git:8
 ```
 
-*Note:* If you're using the `nodejs10.x` runtime, then you'll need to use a slightly different layer:
+*Note:* If you're using the `nodejs10.x`, `nodejs12.x`, `python3.8`, or `java11` runtimes, then you'll need to use a slightly different layer:
 
 ```
 arn:aws:lambda:us-east-1:553035198032:layer:git-lambda2:2
