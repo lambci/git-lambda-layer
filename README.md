@@ -74,7 +74,7 @@ Could not create directory '/home/sbx_user1075/.ssh'.
 ```
 You can ignore this warning – `ssh` should continue to execute past this point, assuming you have the `UserKnownHostsFile` option correct and it contains the signature of the host you're trying to connect to. Alternatively, you can use `-o StrictHostKeyChecking=no` if you're not concerned about MiTM attacks.
 
-## Version ARNs for Amazon Linux 2 runtimes (`nodejs10.x`)
+## Version ARNs for Amazon Linux 2 runtimes (`nodejs10.x`, `nodejs12.x`, `python3.8`, `java11`)
 
 | Git version | openssh version | ARN |
 | --- | --- | --- |
