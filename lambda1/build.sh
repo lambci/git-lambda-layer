@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export GIT_VERSION=2.24.0
+export GIT_VERSION=2.24.1
 
 rm layer.zip
 
