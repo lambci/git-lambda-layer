@@ -1,16 +1,25 @@
 #!/bin/bash
 
-LAYER_NAME=git-lambda2
+. ./config.sh
 
-GIT_VERSION=2.24.1
+DESCRIPTION="Git ${GIT_VERSION} and openssh binaries for Amazon Linux 2 Lambdas"
+FILENAME=${LAYER_NAME}-${GIT_VERSION}.zip
 
 REGIONS="$(aws ssm get-parameters-by-path --path /aws/service/global-infrastructure/services/lambda/regions \
   --query 'Parameters[].Value' --output text | tr '[:blank:]' '\n' | grep -v -e ^cn- -e ^us-gov- | sort -r)"
 
+aws s3api put-object --bucket lambci --key layers/${FILENAME} --body layer.zip
+
 for region in $REGIONS; do
+  aws s3api copy-object --region $region --copy-source lambci/layers/${FILENAME} \
+    --bucket lambci-${region} --key layers/${FILENAME} && \
   aws lambda add-layer-version-permission --region $region --layer-name $LAYER_NAME \
     --statement-id sid1 --action lambda:GetLayerVersion --principal '*' \
     --version-number $(aws lambda publish-layer-version --region $region --layer-name $LAYER_NAME \
-      --zip-file fileb://layer.zip --cli-read-timeout 0 --cli-connect-timeout 0 \
-      --description "Git ${GIT_VERSION} and openssh binaries for Amazon Linux 2 Lambdas" --query Version --output text)
+      --content S3Bucket=lambci-${region},S3Key=layers/${FILENAME} \
+      --description "$DESCRIPTION" --query Version --output text) &
+done
+
+for job in $(jobs -p); do
+  wait $job
 done
