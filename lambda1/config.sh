@@ -1,2 +1,2 @@
 export LAYER_NAME=git
-export GIT_VERSION=2.25.0
+export GIT_VERSION=2.26.1

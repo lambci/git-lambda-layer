@@ -12,13 +12,14 @@ Click on Layers and choose "Add a layer", and "Provide a layer version
 ARN" and enter the following ARN (replace `us-east-1` with the region of your Lambda):
 
 ```
-arn:aws:lambda:us-east-1:553035198032:layer:git:10
+arn:aws:lambda:us-east-1:553035198032:layer:git-lambda2:5
 ```
 
-*Note:* If you're using the `nodejs10.x`, `nodejs12.x`, `python3.8`, or `java11` runtimes, then you'll need to use a slightly different layer:
+*Note:* If you're using an older runtime, such as `python2.7`, `python3.6` ,`python3.7`, `ruby2.5`, `java8`, `go1.x`, `dotnetcore2.1`
+or `provided` (custom runtime), then you'll need to use a slightly different layer:
 
 ```
-arn:aws:lambda:us-east-1:553035198032:layer:git-lambda2:4
+arn:aws:lambda:us-east-1:553035198032:layer:git:11
 ```
 
 (again, replacing `us-east-1` with the region of your Lambda)
@@ -74,10 +75,11 @@ Could not create directory '/home/sbx_user1075/.ssh'.
 ```
 You can ignore this warning – `ssh` should continue to execute past this point, assuming you have the `UserKnownHostsFile` option correct and it contains the signature of the host you're trying to connect to. Alternatively, you can use `-o StrictHostKeyChecking=no` if you're not concerned about MiTM attacks.
 
-## Version ARNs for Amazon Linux 2 runtimes (`nodejs10.x`, `nodejs12.x`, `python3.8`, `java11`)
+## Version ARNs for [Amazon Linux 2 runtimes](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)
 
 | Git version | openssh version | ARN |
 | --- | --- | --- |
+| 2.26.1 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git-lambda2:5` |
 | 2.25.0 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git-lambda2:4` |
 | 2.24.1 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git-lambda2:3` |
 | 2.24.0 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git-lambda2:2` |
@@ -87,6 +89,7 @@ You can ignore this warning – `ssh` should continue to execute past this poin
 
 | Git version | openssh version | ARN |
 | --- | --- | --- |
+| 2.26.1 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git:11` |
 | 2.25.0 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git:10` |
 | 2.24.1 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git:9` |
 | 2.24.0 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git:8` |
