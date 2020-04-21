@@ -12,7 +12,7 @@ Click on Layers and choose "Add a layer", and "Provide a layer version
 ARN" and enter the following ARN (replace `us-east-1` with the region of your Lambda):
 
 ```
-arn:aws:lambda:us-east-1:553035198032:layer:git-lambda2:5
+arn:aws:lambda:us-east-1:553035198032:layer:git-lambda2:6
 ```
 
 *Note:* If you're using an older runtime, such as `python2.7`, `python3.6` ,`python3.7`, `ruby2.5`, `java8`, `go1.x`, `dotnetcore2.1`
@@ -79,6 +79,7 @@ You can ignore this warning – `ssh` should continue to execute past this poin
 
 | Git version | openssh version | ARN |
 | --- | --- | --- |
+| 2.26.2| OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git-lambda2:6` |
 | 2.26.1 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git-lambda2:5` |
 | 2.25.0 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git-lambda2:4` |
 | 2.24.1 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git-lambda2:3` |
@@ -89,6 +90,7 @@ You can ignore this warning – `ssh` should continue to execute past this poin
 
 | Git version | openssh version | ARN |
 | --- | --- | --- |
+| 2.26.2 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git:12` |
 | 2.26.1 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git:11` |
 | 2.25.0 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git:10` |
 | 2.24.1 | OpenSSH_7.4p1, OpenSSL 1.0.2k-fips | `arn:aws:lambda:<region>:553035198032:layer:git:9` |
